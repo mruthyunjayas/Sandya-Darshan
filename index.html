@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Sandya ❤️ Darshan Wedding</title>
+
+  <!-- GOOGLE FONTS -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- BOOTSTRAP -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- TAILWIND -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      overflow-x:hidden;
+      background:linear-gradient(to bottom,#fff5f7,#fff);
+      color:#333;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================== */
+
+    .navbar-custom{
+      position:fixed;
+      top:20px;
+      left:50%;
+      transform:translateX(-50%);
+      width:90%;
+      z-index:999;
+      background:rgba(255,255,255,0.1);
+      backdrop-filter:blur(15px);
+      border:1px solid rgba(255,255,255,0.2);
+      border-radius:60px;
+      padding:15px 30px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .navbar-custom h2{
+      color:white;
+      font-size:2rem;
+      font-weight:bold;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:30px;
+    }
+
+    .nav-links a{
+      color:white;
+      text-decoration:none;
+      transition:0.3s;
+      font-weight:500;
+    }
+
+    .nav-links a:hover{
+      color:#ffd6e7;
+    }
+
+    /* =========================
+       HERO SECTION
+    ========================== */
+
+    header{
+      min-height:100vh;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      overflow:hidden;
+    }
+
+    .hero-bg{
+      position:absolute;
+      inset:0;
+      background:url("assets/final.png") center/cover no-repeat;
+      animation:zoom 15s infinite alternate ease-in-out;
+      transform:scale(1.1);
+      filter:brightness(0.45);
+    }
+
+    @keyframes zoom{
+      from{
+        transform:scale(1.05);
+      }
+
+      to{
+        transform:scale(1.2);
+      }
+    }
+
+    .overlay{
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.35);
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      color:white;
+      padding:20px;
+      animation:fadeUp 1.5s ease;
+    }
+
+    @keyframes fadeUp{
+
+      from{
+        opacity:0;
+        transform:translateY(60px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0px);
+      }
+
+    }
+
+    .hero-content h1{
+      font-size:7rem;
+      font-family:'Great Vibes',cursive;
+      margin-bottom:20px;
+      text-shadow:0 5px 20px rgba(0,0,0,0.5);
+    }
+
+    .heart{
+      display:inline-block;
+      animation:heartbeat 1s infinite;
+    }
+
+    @keyframes heartbeat{
+
+      0%{
+        transform:scale(1);
+      }
+
+      25%{
+        transform:scale(1.3);
+      }
+
+      50%{
+        transform:scale(1);
+      }
+
+      75%{
+        transform:scale(1.3);
+      }
+
+      100%{
+        transform:scale(1);
+      }
+
+    }
+
+    .hero-content p{
+      max-width:800px;
+      margin:auto;
+      line-height:1.8;
+      font-size:1.2rem;
+    }
+
+    .hero-buttons{
+      margin-top:40px;
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn-custom{
+      padding:15px 35px;
+      border:none;
+      border-radius:50px;
+      cursor:pointer;
+      transition:0.4s;
+      font-weight:600;
+      font-size:1rem;
+    }
+
+    .btn-pink{
+      background:linear-gradient(to right,#ff4f8b,#ff7bb0);
+      color:white;
+      box-shadow:0 10px 25px rgba(255,79,139,0.4);
+    }
+
+    .btn-glass{
+      background:rgba(255,255,255,0.15);
+      color:white;
+      border:1px solid rgba(255,255,255,0.2);
+      backdrop-filter:blur(10px);
+    }
+
+    .btn-custom:hover{
+      transform:translateY(-5px) scale(1.05);
+    }
+
+    /* =========================
+       FLOATING HEARTS
+    ========================== */
+
+    .floating-hearts span{
+      position:absolute;
+      bottom:-100px;
+      color:rgba(255,255,255,0.5);
+      animation:float 10s linear infinite;
+      font-size:20px;
+    }
+
+    @keyframes float{
+
+      0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+      }
+
+      20%{
+        opacity:1;
+      }
+
+      100%{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+      }
+
+    }
+
+    /* =========================
+       COUNTDOWN
+    ========================== */
+
+    .countdown{
+      margin-top:60px;
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .count-box{
+      width:120px;
+      height:120px;
+      border-radius:30px;
+      background:rgba(255,255,255,0.15);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,0.2);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      animation:pulse 2s infinite;
+    }
+
+    @keyframes pulse{
+
+      0%,100%{
+        transform:scale(1);
+      }
+
+      50%{
+        transform:scale(1.05);
+      }
+
+    }
+
+    .count-box h2{
+      font-size:2.5rem;
+      color:white;
+    }
+
+    .count-box span{
+      color:white;
+    }
+
+    /* =========================
+       SECTION
+    ========================== */
+
+    section{
+      padding:100px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:70px;
+    }
+
+    .section-title h2{
+      font-size:4rem;
+      font-family:'Great Vibes',cursive;
+      color:#d6336c;
+      margin-bottom:15px;
+    }
+
+    .section-title p{
+      color:#777;
+      font-size:1.1rem;
+    }
+
+    /* =========================
+       EVENTS
+    ========================== */
+
+    .events{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .event-card{
+      background:white;
+      padding:40px;
+      border-radius:30px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.08);
+      transition:0.5s;
+      opacity:0;
+      transform:translateY(80px);
+    }
+
+    .event-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .event-card h3{
+      color:#d6336c;
+      margin-bottom:15px;
+      font-size:2rem;
+    }
+
+    /* =========================
+       STORY SECTION
+    ========================== */
+
+    .story-container{
+      display:flex;
+      flex-direction:column;
+      gap:50px;
+    }
+
+    .story-card{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+      background:white;
+      border-radius:30px;
+      overflow:hidden;
+      box-shadow:0 15px 40px rgba(0,0,0,0.08);
+      opacity:0;
+      transform:translateY(80px);
+    }
+
+    .story-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .story-content{
+      padding:40px;
+    }
+
+    .story-content h3{
+      font-size:2.5rem;
+      color:#d6336c;
+      margin-bottom:20px;
+      font-family:'Great Vibes',cursive;
+    }
+
+    /* =========================
+       GALLERY
+    ========================== */
+
+    .gallery{
+      columns:4 250px;
+      column-gap:20px;
+    }
+
+    .gallery img{
+      width:100%;
+      margin-bottom:20px;
+      border-radius:25px;
+      transition:0.5s;
+      box-shadow:0 10px 30px rgba(0,0,0,0.12);
+      opacity:0;
+      transform:translateY(60px);
+    }
+
+    .gallery img:hover{
+      transform:scale(1.03);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer{
+      background:linear-gradient(to right,#b31252,#ff4f8b);
+      color:white;
+      text-align:center;
+      padding:60px 20px;
+    }
+
+    footer h2{
+      font-size:3rem;
+      font-family:'Great Vibes',cursive;
+      margin-bottom:10px;
+    }
+
+    /* =========================
+       MUSIC BUTTON
+    ========================== */
+
+    .music-btn{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      width:70px;
+      height:70px;
+      border:none;
+      border-radius:50%;
+      background:linear-gradient(to right,#ff4f8b,#ff7bb0);
+      color:white;
+      font-size:28px;
+      cursor:pointer;
+      z-index:999;
+      box-shadow:0 10px 25px rgba(0,0,0,0.3);
+      animation:bounce 2s infinite;
+    }
+
+    @keyframes bounce{
+
+      0%,100%{
+        transform:translateY(0);
+      }
+
+      50%{
+        transform:translateY(-10px);
+      }
+
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media(max-width:992px){
+
+      .hero-content h1{
+        font-size:5rem;
+      }
+
+      .gallery{
+        columns:3 220px;
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      .nav-links{
+        display:none;
+      }
+
+      .hero-content h1{
+        font-size:4rem;
+      }
+
+      .section-title h2{
+        font-size:3rem;
+      }
+
+      .gallery{
+        columns:2 160px;
+      }
+
+      .count-box{
+        width:90px;
+        height:90px;
+      }
+
+    }
+
+    @media(max-width:480px){
+
+      .hero-content h1{
+        font-size:3rem;
+      }
+
+      .section-title h2{
+        font-size:2.5rem;
+      }
+
+      .gallery{
+        columns:1;
+      }
+
+      .count-box{
+        width:75px;
+        height:75px;
+      }
+
+      .count-box h2{
+        font-size:1.5rem;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- FLOATING HEARTS -->
+
+  <div class="floating-hearts">
+
+    <span style="left:10%; animation-delay:0s;">❤</span>
+    <span style="left:25%; animation-delay:2s;">❤</span>
+    <span style="left:40%; animation-delay:4s;">❤</span>
+    <span style="left:60%; animation-delay:1s;">❤</span>
+    <span style="left:75%; animation-delay:3s;">❤</span>
+    <span style="left:90%; animation-delay:5s;">❤</span>
+
+  </div>
+
+  <!-- NAVBAR -->
+
+  <div class="navbar-custom">
+
+    <h2>SD</h2>
+
+    <div class="nav-links">
+
+      <a href="#">Home</a>
+      <a href="#">Story</a>
+      <a href="#">Gallery</a>
+      <a href="#">Events</a>
+
+    </div>
+
+  </div>
+
+  <!-- HERO -->
+
+  <header>
+
+    <div class="hero-bg"></div>
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+      <h1>
+        Sandya
+        <span class="heart">❤️</span>
+        Darshan
+      </h1>
+
+      <p>
+        Together with their families invite you to celebrate
+        the beginning of their forever journey filled with love,
+        happiness, traditions and unforgettable memories.
+      </p>
+
+      <div class="hero-buttons">
+
+        <button class="btn-custom btn-pink">
+          Wedding Invitation
+        </button>
+
+        <button class="btn-custom btn-glass">
+          Our Story
+        </button>
+
+      </div>
+
+      <!-- COUNTDOWN -->
+
+      <div class="countdown">
+
+        <div class="count-box">
+          <h2 id="days">00</h2>
+          <span>Days</span>
+        </div>
+
+        <div class="count-box">
+          <h2 id="hours">00</h2>
+          <span>Hours</span>
+        </div>
+
+        <div class="count-box">
+          <h2 id="minutes">00</h2>
+          <span>Minutes</span>
+        </div>
+
+        <div class="count-box">
+          <h2 id="seconds">00</h2>
+          <span>Seconds</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- EVENTS -->
+
+  <section>
+
+    <div class="section-title">
+
+      <h2>Wedding Events</h2>
+
+      <p>
+        Celebrate every magical moment with us
+      </p>
+
+    </div>
+
+    <div class="events">
+
+      <div class="event-card">
+
+        <h3>Reception</h3>
+
+        <p>
+          20 May 2026 — 7:30 PM
+        </p>
+
+      </div>
+
+      <div class="event-card">
+
+        <h3>Muhurtha</h3>
+
+        <p>
+          21 May 2026 — 9:30 AM
+        </p>
+
+      </div>
+
+      <div class="event-card">
+
+        <h3>Venue</h3>
+
+        <p>
+          Shamanur Shivashankarappa
+          Samudhaya Bhavana,
+          Davanagere
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- STORY -->
+
+  <section>
+
+    <div class="section-title">
+
+      <h2>Our Love Story</h2>
+
+      <p>
+        A beautiful journey towards forever
+      </p>
+
+    </div>
+
+    <div class="story-container">
+
+      <div class="story-card">
+
+        <img src="assets/face.png" alt="">
+
+        <div class="story-content">
+
+          <h3>First Smile</h3>
+
+          <p>
+            Every love story begins with a beautiful moment.
+            Ours started with smiles, conversations and memories
+            that slowly turned into forever.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="story-card">
+
+        <img src="assets/sandy.png" alt="">
+
+        <div class="story-content">
+
+          <h3>Forever Together</h3>
+
+          <p>
+            Through every laugh, every dream and every moment,
+            we found a home in each other.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- GALLERY -->
+
+  <section>
+
+    <div class="section-title">
+
+      <h2>Wedding Gallery</h2>
+
+      <p>
+        Captured moments that last forever
+      </p>
+
+    </div>
+
+    <div class="gallery">
+
+      <img src="assets/2.png" alt="">
+      <img src="assets/exitd.png" alt="">
+      <img src="assets/face.png" alt="">
+      <img src="assets/final.png" alt="">
+      <img src="assets/og.png" alt="">
+      <img src="assets/sa1.png" alt="">
+      <img src="assets/sa2.png" alt="">
+      <img src="assets/sa3.png" alt="">
+      <img src="assets/sa4.png" alt="">
+      <img src="assets/sa5.png" alt="">
+      <img src="assets/sa6.png" alt="">
+      <img src="assets/sa7.png" alt="">
+      <img src="assets/sa8.png" alt="">
+      <img src="assets/sa9.png" alt="">
+      <img src="assets/sa10.png" alt="">
+      <img src="assets/sa11.png" alt="">
+      <img src="assets/sa12.png" alt="">
+      <img src="assets/sa13.png" alt="">
+      <img src="assets/sa14.png" alt="">
+      <img src="assets/sa15.png" alt="">
+      <img src="assets/sa16.png" alt="">
+      <img src="assets/sa17.png" alt="">
+      <img src="assets/sa19.png" alt="">
+      <img src="assets/sa20.png" alt="">
+      <img src="assets/sa21.png" alt="">
+      <img src="assets/sa22.png" alt="">
+      <img src="assets/sa23.png" alt="">
+      <img src="assets/sa24.png" alt="">
+      <img src="assets/sa25.png" alt="">
+      <img src="assets/sa26.png" alt="">
+      <img src="assets/sa27.png" alt="">
+      <img src="assets/sa28.png" alt="">
+      <img src="assets/sa29.png" alt="">
+      <img src="assets/sa30.png" alt="">
+      <img src="assets/sandy.png" alt="">
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <h2>
+      Sandya ❤️ Darshan
+    </h2>
+
+    <p>
+      Made with love for a lifetime of togetherness
+    </p>
+
+    <br>
+
+    <p>
+      #SandyaWedsDarshan
+    </p>
+
+  </footer>
+
+  <!-- MUSIC BUTTON -->
+
+  <button class="music-btn" onclick="toggleMusic()">
+    🎵
+  </button>
+
+  <!-- AUDIO -->
+
+  <audio id="bgMusic" loop>
+
+    <source src="assets/music.mp3" type="audio/mp3">
+
+  </audio>
+
+  <!-- SCRIPT -->
+
+  <script>
+
+    // COUNTDOWN
+
+    const weddingDate = new Date(
+      "May 21, 2026 09:30:00"
+    ).getTime();
+
+    setInterval(() => {
+
+      const now = new Date().getTime();
+
+      const gap = weddingDate - now;
+
+      const days = Math.floor(
+        gap / (1000 * 60 * 60 * 24)
+      );
+
+      const hours = Math.floor(
+        (gap % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
+      );
+
+      const minutes = Math.floor(
+        (gap % (1000 * 60 * 60))
+        / (1000 * 60)
+      );
+
+      const seconds = Math.floor(
+        (gap % (1000 * 60))
+        / 1000
+      );
+
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = hours;
+      document.getElementById("minutes").innerText = minutes;
+      document.getElementById("seconds").innerText = seconds;
+
+    },1000);
+
+    // MUSIC
+
+    function toggleMusic(){
+
+      const music = document.getElementById("bgMusic");
+
+      if(music.paused){
+
+        music.play();
+
+      }else{
+
+        music.pause();
+
+      }
+
+    }
+
+    // SCROLL ANIMATION
+
+    const observer = new IntersectionObserver((entries)=>{
+
+      entries.forEach((entry)=>{
+
+        if(entry.isIntersecting){
+
+          entry.target.style.opacity = "1";
+
+          entry.target.style.transform =
+          "translateY(0px)";
+
+          entry.target.style.transition =
+          "1s ease";
+
+        }
+
+      });
+
+    },{threshold:0.2});
+
+    document.querySelectorAll(
+      ".event-card,.story-card,.gallery img"
+    ).forEach((el)=>{
+
+      observer.observe(el);
+
+    });
+
+    // FLOWER ANIMATION
+
+    setInterval(()=>{
+
+      const flower = document.createElement("div");
+
+      flower.innerHTML = "🌸";
+
+      flower.style.position = "fixed";
+
+      flower.style.left =
+      Math.random()*window.innerWidth + "px";
+
+      flower.style.top = "-20px";
+
+      flower.style.fontSize =
+      Math.random()*20 + 20 + "px";
+
+      flower.style.zIndex = "999";
+
+      flower.style.pointerEvents = "none";
+
+      document.body.appendChild(flower);
+
+      let pos = 0;
+
+      const fall = setInterval(()=>{
+
+        pos++;
+
+        flower.style.top = pos + "px";
+
+        flower.style.transform =
+        `translateX(${Math.sin(pos/50)*50}px)
+        rotate(${pos}deg)`;
+
+        if(pos > window.innerHeight){
+
+          clearInterval(fall);
+
+          flower.remove();
+
+        }
+
+      },10);
+
+    },500);
+
+  </script>
+
+</body>
+</html>
